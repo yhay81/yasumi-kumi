@@ -1,0 +1,10 @@
+{
+  "name": "休み組み",
+  "short_name": "休み組み",
+  "description": "祝日・週末・休暇をつないで連休を組む",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f0e6",
+  "theme_color": "#334a45",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

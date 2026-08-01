@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">休み組み</title>
+  <desc id="desc">祝日、週末、休暇札を一年の予定表でつないで連休を組む</desc>
+  <rect width="1200" height="630" fill="#f4f0e6"/>
+  <g stroke="#334a45" stroke-opacity=".055">
+    <path d="M0 45H1200M0 95H1200M0 145H1200M0 195H1200M0 245H1200M0 295H1200M0 345H1200M0 395H1200M0 445H1200M0 495H1200M0 545H1200M0 595H1200"/>
+    <path d="M45 0V630M95 0V630M145 0V630M195 0V630M245 0V630M295 0V630M345 0V630M395 0V630M445 0V630M495 0V630M545 0V630M595 0V630M645 0V630M695 0V630M745 0V630M795 0V630M845 0V630M895 0V630M945 0V630M995 0V630M1045 0V630M1095 0V630M1145 0V630"/>
+  </g>
+  <rect x="54" y="48" width="1092" height="534" rx="14" fill="#334a45" stroke="#203630" stroke-width="4"/>
+  <rect x="75" y="69" width="1050" height="492" rx="8" fill="none" stroke="#fffdf7" stroke-opacity=".14" stroke-width="2"/>
+  <g transform="translate(105 105)">
+    <text x="0" y="27" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="5" fill="#d7c895">祝日 × 週末 × 休暇</text>
+    <text x="0" y="91" font-family="serif" font-size="48" font-weight="700" letter-spacing="6" fill="#fffdf7">休み組み</text>
+    <text x="2" y="137" font-family="sans-serif" font-size="21" letter-spacing="2" fill="#dce5e0">休む日を置く。連休がつながる。</text>
+  </g>
+  <g transform="translate(130 340)">
+    <circle cx="47" cy="86" r="47" fill="#ede7d5" stroke="#b9ab87" stroke-width="12"/>
+    <circle cx="47" cy="86" r="17" fill="#c69c43" stroke="#334a45" stroke-width="8"/>
+    <circle cx="743" cy="86" r="47" fill="#ede7d5" stroke="#b9ab87" stroke-width="12"/>
+    <circle cx="743" cy="86" r="17" fill="#c69c43" stroke="#334a45" stroke-width="8"/>
+    <rect x="56" y="22" width="678" height="128" fill="#e6d29b" stroke="#a68542" stroke-width="4"/>
+    <path d="M70 38H720M70 134H720" stroke="#ad8c4e" stroke-width="2" stroke-dasharray="8 8"/>
+    <g font-family="monospace" font-weight="700" font-size="16" fill="#203630">
+      <g transform="translate(85 53)"><rect width="92" height="60" fill="#fffbe7" fill-opacity=".45" stroke="#b99a5f"/><text x="14" y="25">04</text><path d="M14 39h15m8 0h15m8 0h15" stroke="#9aaf9f" stroke-width="5"/></g>
+      <g transform="translate(187 53)"><rect width="92" height="60" fill="#fffbe7" fill-opacity=".45" stroke="#b99a5f"/><text x="14" y="25">05</text><path d="M14 39h15m8 0h15" stroke="#9aaf9f" stroke-width="5"/><path d="M60 39h15" stroke="#b64d48" stroke-width="5"/></g>
+      <g transform="translate(289 53)"><rect width="92" height="60" fill="#fffbe7" fill-opacity=".45" stroke="#b99a5f"/><text x="14" y="25">06</text><path d="M14 39h15m8 0h15m8 0h15" stroke="#9aaf9f" stroke-width="5"/></g>
+      <g transform="translate(391 53)"><rect width="92" height="60" fill="#fffbe7" fill-opacity=".45" stroke="#b99a5f"/><text x="14" y="25">07</text><path d="M14 39h15m8 0h15m8 0h15" stroke="#9aaf9f" stroke-width="5"/></g>
+      <g transform="translate(493 53)"><rect width="92" height="60" fill="#fffbe7" fill-opacity=".45" stroke="#b99a5f"/><text x="14" y="25">08</text><path d="M14 39h15m8 0h15" stroke="#9aaf9f" stroke-width="5"/><path d="M60 39h15" stroke="#b64d48" stroke-width="5"/></g>
+      <g transform="translate(595 53)"><rect width="92" height="60" fill="#fffbe7" fill-opacity=".45" stroke="#b99a5f"/><text x="14" y="25">09</text><path d="M14 39h15m8 0h15" stroke="#9aaf9f" stroke-width="5"/><path d="M60 39h15" stroke="#b64d48" stroke-width="5"/></g>
+    </g>
+    <g transform="translate(595 -58) rotate(5)">
+      <rect width="125" height="64" fill="#f2d8c6" stroke="#913d38" stroke-width="4"/>
+      <path d="M12 13v38M113 13v38" stroke="#c98176" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="63" y="41" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" letter-spacing="6" fill="#7f302e">休暇</text>
+    </g>
+  </g>
+  <g transform="translate(910 126)">
+    <rect width="160" height="154" rx="6" fill="#fffdf7" stroke="#203630" stroke-width="4"/>
+    <rect width="160" height="32" rx="4" fill="#b64d48"/>
+    <path d="M36 -8v22M124 -8v22" stroke="#e6d29b" stroke-width="9" stroke-linecap="round"/>
+    <g font-family="monospace" font-size="15" text-anchor="middle">
+      <text x="28" y="61" fill="#b64d48">日</text><text x="50" y="61" fill="#334a45">月</text><text x="72" y="61" fill="#334a45">火</text><text x="94" y="61" fill="#334a45">水</text><text x="116" y="61" fill="#334a45">木</text><text x="138" y="61" fill="#4d7181">金</text>
+      <text x="28" y="91" fill="#4d7181">3</text><text x="50" y="91" fill="#b64d48">4</text><text x="72" y="91" fill="#b64d48">5</text><rect x="82" y="72" width="24" height="25" fill="#334a45"/><text x="94" y="91" fill="#fff">6</text><text x="116" y="91" fill="#334a45">7</text><text x="138" y="91" fill="#4d7181">8</text>
+      <text x="28" y="124" fill="#4d7181">10</text><text x="50" y="124" fill="#334a45">11</text><text x="72" y="124" fill="#334a45">12</text><text x="94" y="124" fill="#334a45">13</text><text x="116" y="124" fill="#334a45">14</text><text x="138" y="124" fill="#4d7181">15</text>
+    </g>
+  </g>
+</svg>

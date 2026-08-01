@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yasumi-kumi.yhay81.com/sitemap.xml

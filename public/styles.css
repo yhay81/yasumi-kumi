@@ -1,0 +1,1206 @@
+:root {
+  color-scheme: light;
+  --ink: #24332f;
+  --muted: #65736f;
+  --forest: #334a45;
+  --forest-dark: #203630;
+  --forest-pale: #dbe6df;
+  --paper: #f4f0e6;
+  --card: #fffdf7;
+  --line: #c9c2b3;
+  --red: #b64d48;
+  --red-dark: #8c3835;
+  --pink: #f3d9d3;
+  --blue: #4d7181;
+  --blue-pale: #dde8eb;
+  --gold: #c69c43;
+  --tape: #e6d29b;
+  --shadow: 0 18px 44px rgb(34 48 43 / 13%);
+  color: var(--ink);
+  background: #dedbd2;
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M0 21.5h22M21.5 0v22' fill='none' stroke='%23334a45' stroke-opacity='.035'/%3E%3C/svg%3E");
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 50;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.7rem 1rem;
+  color: white;
+  background: var(--forest-dark);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.wordmark {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  color: var(--forest-dark);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.mini-calendar {
+  display: grid;
+  grid-template-columns: repeat(2, 0.48rem);
+  gap: 0.12rem;
+  padding: 0.28rem;
+  border: 2px solid var(--forest);
+  border-top: 0.38rem solid var(--red);
+  background: var(--card);
+}
+
+.mini-calendar i {
+  display: block;
+  width: 0.48rem;
+  height: 0.42rem;
+  background: var(--forest-pale);
+}
+
+.mini-calendar i:last-child {
+  background: var(--red);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.site-header nav a {
+  padding: 0.55rem 0.65rem;
+  color: #52625d;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: var(--red-dark);
+  text-decoration: underline;
+}
+
+.home {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto 4rem;
+}
+
+.planner-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.68fr) minmax(26rem, 1.32fr);
+  gap: 1.5rem 3rem;
+  min-height: 29rem;
+  padding: clamp(1.5rem, 4vw, 3.2rem);
+  overflow: hidden;
+  border: 1px solid #1f3932;
+  border-radius: 0.35rem 0.35rem 1.4rem 0.35rem;
+  color: #fffdf7;
+  background-color: var(--forest);
+  box-shadow: var(--shadow);
+}
+
+.planner-board::before {
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgb(255 255 255 / 11%);
+  border-radius: 0.2rem 0.2rem 1rem 0.2rem;
+  content: "";
+  pointer-events: none;
+}
+
+.planner-board::after {
+  position: absolute;
+  right: 2.8rem;
+  bottom: -1.1rem;
+  width: 12rem;
+  height: 2.2rem;
+  border: 1px solid rgb(255 255 255 / 9%);
+  background: rgb(16 39 33 / 17%);
+  content: "";
+  transform: skewX(-20deg);
+}
+
+.product-heading {
+  position: relative;
+  z-index: 2;
+  align-self: start;
+  padding-top: 1.3rem;
+}
+
+.eyebrow,
+.section-heading p,
+.recommendation-tray header p,
+.selected-summary > p,
+.content-heading p {
+  margin: 0 0 0.45rem;
+  color: #d7c895;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.product-heading h1 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.35rem);
+  line-height: 1.42;
+  letter-spacing: 0.04em;
+}
+
+.product-heading > p:last-child {
+  max-width: 25rem;
+  margin: 1rem 0 0;
+  color: #dce5e0;
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.year-tape {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+  min-height: 10rem;
+  margin-top: 0.8rem;
+  padding: 1.5rem 2.2rem;
+}
+
+.tape-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.32rem;
+  min-height: 8.6rem;
+  padding: 1rem 1.15rem;
+  border: 2px solid #a68542;
+  background-color: var(--tape);
+  box-shadow: 0 0.75rem 0 rgb(16 38 32 / 18%);
+  transform: rotate(-1deg);
+}
+
+.tape-track::before,
+.tape-track::after {
+  position: absolute;
+  right: 0.5rem;
+  left: 0.5rem;
+  border-top: 1px dashed #ad8c4e;
+  content: "";
+}
+
+.tape-track::before {
+  top: 0.45rem;
+}
+
+.tape-track::after {
+  bottom: 0.45rem;
+}
+
+.month-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.15rem;
+  align-content: center;
+  min-height: 2.7rem;
+  padding: 0.35rem;
+  border: 1px solid #b99a5f;
+  color: var(--forest-dark);
+  background: rgb(255 251 231 / 42%);
+}
+
+.month-block b {
+  grid-column: 1 / -1;
+  font-family: ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.month-block i {
+  height: 0.24rem;
+  background: #9aaf9f;
+}
+
+.month-block.has-holiday i:last-child {
+  background: var(--red);
+}
+
+.tape-track strong {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.65rem;
+  padding: 0.3rem 0.65rem;
+  border: 2px solid #263f38;
+  color: #263f38;
+  background: #ecdfb7;
+  font-family: ui-monospace, monospace;
+  font-size: 1.1rem;
+  transform: rotate(2deg);
+}
+
+.tape-spool {
+  position: absolute;
+  z-index: 2;
+  top: 4.6rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  border: 0.55rem solid #b9ab87;
+  border-radius: 50%;
+  background: #ede7d5;
+  box-shadow:
+    inset 0 0 0 0.45rem var(--forest),
+    0 0.4rem 0 rgb(15 35 29 / 23%);
+}
+
+.tape-spool i {
+  position: absolute;
+  inset: 1rem;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.left-spool {
+  left: -0.9rem;
+}
+
+.right-spool {
+  right: -0.9rem;
+}
+
+.leave-ticket {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 11%;
+  padding: 0.55rem 1.15rem;
+  border: 2px solid #913d38;
+  color: #7f302e;
+  background: #f2d8c6;
+  font-family: "Yu Mincho", serif;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  box-shadow: 0.3rem 0.35rem 0 rgb(17 38 32 / 18%);
+  transform: rotate(5deg);
+}
+
+.planner-controls {
+  position: relative;
+  z-index: 3;
+  align-self: end;
+  width: min(100%, 25rem);
+  padding: 1rem;
+  border: 1px solid rgb(255 255 255 / 17%);
+  background: rgb(20 45 38 / 42%);
+}
+
+.year-tabs {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.year-tabs a {
+  flex: 1;
+  padding: 0.55rem;
+  border: 1px solid #728b81;
+  color: #e3ebe6;
+  font-family: ui-monospace, monospace;
+  font-size: 0.86rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.year-tabs a[aria-current="page"] {
+  border-color: #e6d29b;
+  color: var(--forest-dark);
+  background: #e6d29b;
+}
+
+.budget-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+
+.budget-control > span:first-child {
+  color: #d8e2dd;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.budget-control strong {
+  font-family: ui-monospace, monospace;
+}
+
+.budget-control input {
+  grid-column: 1 / -1;
+  width: 100%;
+  accent-color: var(--red);
+}
+
+.budget-scale {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  color: #abc0b7;
+  font-family: ui-monospace, monospace;
+  font-size: 0.64rem;
+}
+
+.recommend-button,
+.selected-actions button,
+.page-cta {
+  border: 1px solid var(--red-dark);
+  color: white;
+  background: var(--red);
+  box-shadow: 0 0.28rem 0 var(--red-dark);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.recommend-button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.78rem 1rem;
+}
+
+.recommend-button:hover,
+.selected-actions button:hover,
+.page-cta:hover {
+  background: var(--red-dark);
+}
+
+.recommend-button:disabled,
+.selected-actions button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.recommend-button.is-loading::after {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-left: 0.6rem;
+  border: 2px solid rgb(255 255 255 / 35%);
+  border-top-color: white;
+  border-radius: 50%;
+  content: "";
+  animation: turn 0.7s linear infinite;
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.planner-status {
+  min-height: 2.5rem;
+  margin: 0.8rem 0 0;
+  color: #c6d5ce;
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.source-ribbon {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  margin: 0 1rem;
+  padding: 0.7rem 1rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: #e7e0d2;
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.source-ribbon span {
+  padding: 0.25rem 0.48rem;
+  border: 1px solid #aaa28f;
+  color: #52615c;
+  background: #f6f1e7;
+}
+
+.source-ribbon a {
+  margin-left: auto;
+  color: var(--red-dark);
+}
+
+.planner-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.calendar-area,
+.recommendation-tray,
+.selected-plan,
+.holiday-ledger {
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: 0 0.5rem 1.5rem rgb(41 51 47 / 7%);
+}
+
+.calendar-area {
+  padding: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--forest);
+}
+
+.section-heading p {
+  color: var(--red-dark);
+}
+
+.section-heading h2,
+.recommendation-tray h2,
+.selected-summary h2,
+.holiday-ledger h2,
+.content-page h1 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+#selected-count {
+  padding: 0.4rem 0.65rem;
+  color: white;
+  background: var(--forest);
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin: 0.8rem 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.calendar-legend span::before {
+  display: inline-block;
+  width: 0.62rem;
+  height: 0.62rem;
+  margin-right: 0.35rem;
+  border: 1px solid currentcolor;
+  content: "";
+  vertical-align: -0.05rem;
+}
+
+.legend-holiday::before {
+  color: var(--red);
+  background: var(--pink);
+}
+
+.legend-weekend::before {
+  color: var(--blue);
+  background: var(--blue-pale);
+}
+
+.legend-leave::before {
+  color: var(--forest);
+  background: var(--forest);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 0.8rem;
+}
+
+.month-card {
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid #ded8cb;
+  background: #fffefb;
+}
+
+.month-card > header {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.month-card > header strong {
+  color: var(--forest);
+  font-family: ui-monospace, monospace;
+  font-size: 1rem;
+}
+
+.month-card > header span {
+  color: var(--muted);
+  font-size: 0.64rem;
+}
+
+.weekday-row,
+.month-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.12rem;
+}
+
+.weekday-row span {
+  padding: 0.2rem 0;
+  color: #7a837f;
+  font-size: 0.55rem;
+  text-align: center;
+}
+
+.weekday-row span:first-child {
+  color: var(--red);
+}
+
+.weekday-row span:last-child {
+  color: var(--blue);
+}
+
+.calendar-day,
+.empty-day {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  color: #48534f;
+  background: transparent;
+  font-family: ui-monospace, monospace;
+  font-size: clamp(0.54rem, 1vw, 0.68rem);
+}
+
+button.calendar-day {
+  border-color: #e1ddd3;
+  cursor: pointer;
+}
+
+button.calendar-day:hover {
+  border-color: var(--forest);
+  background: var(--forest-pale);
+}
+
+.calendar-day.is-weekend {
+  color: var(--blue);
+  background: var(--blue-pale);
+}
+
+.calendar-day.is-holiday {
+  color: var(--red-dark);
+  background: var(--pink);
+  font-weight: 800;
+}
+
+.calendar-day.is-selected {
+  border-color: var(--forest-dark);
+  color: white;
+  background: var(--forest-dark);
+  box-shadow: inset 0 0 0 2px #eef4ef;
+  font-weight: 800;
+}
+
+.calendar-day.is-today {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+
+.calendar-day.is-past {
+  cursor: not-allowed;
+  opacity: 0.34;
+}
+
+.recommendation-tray {
+  position: relative;
+  align-self: start;
+  padding: 1.4rem 1rem 1rem;
+  border-top: 0.42rem solid var(--forest);
+  background-color: #ebe5d8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='26'%3E%3Cpath d='M0 25.5h12' stroke='%23334a45' stroke-opacity='.07'/%3E%3C/svg%3E");
+}
+
+.tray-handle {
+  position: absolute;
+  top: -0.9rem;
+  left: 50%;
+  width: 6rem;
+  height: 1.2rem;
+  border: 1px solid #82785f;
+  border-radius: 1rem 1rem 0 0;
+  background: #a59879;
+  transform: translateX(-50%);
+}
+
+.tray-handle i {
+  position: absolute;
+  inset: 0.34rem 1.2rem;
+  border-radius: 1rem;
+  background: #6e684f;
+}
+
+.recommendation-tray header {
+  margin-bottom: 1rem;
+}
+
+.recommendation-tray header p {
+  color: var(--red-dark);
+}
+
+.recommendation-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.empty-recommendation {
+  margin: 0;
+  padding: 1.2rem;
+  border: 1px dashed #a7a08f;
+  color: var(--muted);
+  background: rgb(255 253 247 / 55%);
+  font-size: 0.76rem;
+  line-height: 1.75;
+}
+
+.leave-ticket-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border: 1px solid #b8ae99;
+  border-left: 0.32rem solid var(--red);
+  background: #fffaf0;
+  box-shadow: 0.22rem 0.25rem 0 rgb(64 66 54 / 10%);
+}
+
+.leave-ticket-card::after {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-bottom: 1px solid #b8ae99;
+  border-left: 1px solid #b8ae99;
+  background: #ebe5d8;
+  content: "";
+}
+
+.ticket-rank {
+  align-self: start;
+  padding: 0.2rem;
+  color: var(--red-dark);
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+}
+
+.leave-ticket-card strong {
+  display: block;
+  color: var(--forest-dark);
+  font-family: "Yu Mincho", serif;
+  font-size: 1.1rem;
+}
+
+.leave-ticket-card p,
+.leave-ticket-card small,
+.ticket-holidays {
+  display: block;
+  margin: 0.18rem 0;
+  color: #5d6864;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.ticket-holidays {
+  color: var(--red-dark);
+}
+
+.leave-ticket-card button {
+  grid-column: 1 / -1;
+  padding: 0.52rem;
+  border: 1px solid var(--forest);
+  color: var(--forest);
+  background: transparent;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.leave-ticket-card button:hover {
+  color: white;
+  background: var(--forest);
+}
+
+.selected-plan {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.3rem 1.5rem;
+  border-left: 0.5rem solid var(--forest);
+}
+
+.selected-summary > p {
+  color: var(--red-dark);
+}
+
+.selected-summary strong {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--forest-dark);
+  font-family: ui-monospace, monospace;
+  font-size: 0.92rem;
+}
+
+#selected-dates {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.selected-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.selected-actions button {
+  padding: 0.7rem 0.85rem;
+  font-size: 0.72rem;
+}
+
+.selected-actions .clear-button {
+  border-color: #aaa294;
+  color: #59625e;
+  background: transparent;
+  box-shadow: none;
+}
+
+.selected-actions .clear-button:hover {
+  color: white;
+  background: #59625e;
+}
+
+.selected-actions button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1);
+  opacity: 0.38;
+}
+
+.holiday-ledger {
+  margin-top: 1rem;
+  padding: 1.3rem 1.5rem;
+}
+
+.holiday-ledger > header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--forest);
+}
+
+.holiday-ledger > header p {
+  grid-column: 1 / -1;
+  margin: 0 0 0.35rem;
+  color: var(--red-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.holiday-ledger > header > span {
+  color: var(--muted);
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+}
+
+.holiday-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.holiday-list article {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #e1dbcf;
+}
+
+.holiday-list time {
+  color: var(--red-dark);
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.holiday-list b,
+.holiday-list small {
+  display: block;
+  font-size: 0.74rem;
+}
+
+.holiday-list small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.61rem;
+  line-height: 1.45;
+}
+
+.content-page,
+.not-found {
+  width: min(980px, calc(100% - 2rem));
+  min-height: 65vh;
+  margin: 1.5rem auto 4rem;
+  padding: clamp(1.4rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.content-heading {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid var(--forest);
+}
+
+.page-index {
+  display: grid;
+  flex: 0 0 3.3rem;
+  place-items: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  border: 2px solid var(--red);
+  color: var(--red-dark);
+  background: var(--pink);
+  font-family: "Yu Mincho", serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  transform: rotate(-3deg);
+}
+
+.content-heading p {
+  color: var(--red-dark);
+}
+
+.instruction-grid,
+.source-grid,
+.privacy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.instruction-grid section,
+.source-ledger,
+.privacy-grid section {
+  padding: 1.25rem;
+  border: 1px solid #d6d0c4;
+  background: #fbf8f0;
+}
+
+.instruction-grid section > b {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--forest);
+  font-family: "Yu Mincho", serif;
+}
+
+.instruction-grid h2,
+.source-grid h2,
+.privacy-grid h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.92rem;
+}
+
+.instruction-grid p,
+.source-grid p,
+.privacy-grid p {
+  margin: 0;
+  color: #5b6863;
+  font-size: 0.79rem;
+  line-height: 1.85;
+}
+
+.source-grid a {
+  color: var(--red-dark);
+}
+
+.page-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  text-decoration: none;
+}
+
+.not-found {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.not-found > span {
+  color: var(--red);
+  font-family: ui-monospace, monospace;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.not-found h1 {
+  margin: 0.7rem 0;
+  font-family: "Yu Mincho", serif;
+  font-size: 1.5rem;
+}
+
+.not-found p {
+  color: var(--muted);
+}
+
+.not-found a {
+  margin-top: 0.8rem;
+  padding: 0.65rem 1rem;
+  color: white;
+  background: var(--forest);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.site-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.67rem;
+}
+
+.site-footer > span:last-child {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 980px) {
+  .planner-board {
+    grid-template-columns: 1fr;
+  }
+
+  .product-heading {
+    padding-top: 0;
+  }
+
+  .year-tape {
+    grid-column: 1;
+    grid-row: auto;
+    width: min(100%, 40rem);
+  }
+
+  .planner-controls {
+    width: min(100%, 32rem);
+  }
+
+  .planner-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-tray {
+    position: static;
+  }
+
+  .recommendation-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .home,
+  .site-footer {
+    width: min(100% - 1rem, 1240px);
+  }
+
+  .site-header nav a {
+    padding: 0.5rem 0.38rem;
+    font-size: 0.66rem;
+  }
+
+  .planner-board {
+    gap: 1.1rem;
+    min-height: 0;
+    padding: 1.25rem;
+  }
+
+  .product-heading h1 {
+    max-width: 16ch;
+  }
+
+  .year-tape {
+    padding: 1.3rem 1.15rem;
+  }
+
+  .tape-track {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.8rem;
+  }
+
+  .tape-spool {
+    display: none;
+  }
+
+  .leave-ticket {
+    right: 3%;
+  }
+
+  .source-ribbon {
+    margin: 0 0.4rem;
+    overflow-x: auto;
+  }
+
+  .source-ribbon span {
+    white-space: nowrap;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recommendation-list,
+  .instruction-grid,
+  .source-grid,
+  .privacy-grid,
+  .holiday-list {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-plan {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-actions {
+    justify-content: start;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 430px) {
+  .calendar-area {
+    padding: 0.8rem;
+  }
+
+  .calendar-grid {
+    gap: 0.55rem 0.4rem;
+  }
+
+  .month-card {
+    padding: 0.42rem;
+  }
+
+  .calendar-day,
+  .empty-day {
+    font-size: 0.52rem;
+  }
+
+  .selected-actions button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
